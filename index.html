@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>周凯琳 Kellyn · AI 视频作品集</title>
+<meta name="description" content="周凯琳 Kellyn 的 AI 视频与内容设计作品集">
+<style>
+:root{--bg:#0f0f10;--card:#18181b;--line:#2a2a2e;--text:#ededed;--muted:#a1a1aa;--accent:#f59e0b}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Helvetica Neue",Arial,sans-serif;line-height:1.6}
+.wrap{max-width:1180px;margin:0 auto;padding:0 20px}
+header{padding:72px 0 40px;border-bottom:1px solid var(--line)}
+h1{font-size:clamp(30px,5vw,48px);margin:0 0 8px;letter-spacing:-.5px}
+.sub{color:var(--muted);font-size:17px;margin:0}
+.tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px}
+.tag{border:1px solid var(--line);border-radius:999px;padding:4px 12px;font-size:13px;color:var(--muted)}
+h2{font-size:22px;margin:48px 0 6px}
+.lead{color:var(--muted);margin:0 0 24px;font-size:15px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:20px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;overflow:hidden;display:flex;flex-direction:column}
+.media{background:#000;display:flex;justify-content:center}
+.media video{width:100%;max-height:520px;display:block;background:#000}
+.media.v video{width:auto;max-width:100%;height:520px}
+.body{padding:16px 18px 18px}
+.body h3{margin:0 0 4px;font-size:17px}
+.meta{font-size:12px;color:var(--accent);margin-bottom:8px}
+.body p{margin:0;color:var(--muted);font-size:14px}
+.skill{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:22px}
+.skill a{color:var(--accent)}
+.skill ul{margin:10px 0 0;padding-left:20px;color:var(--muted);font-size:14px}
+footer{color:var(--muted);font-size:13px;padding:56px 0 40px;border-top:1px solid var(--line);margin-top:56px}
+@media (max-width:520px){.grid{grid-template-columns:1fr}.media.v video{height:440px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+<h1>周凯琳 Kellyn</h1>
+<p class="sub">AI 视频创作 · 提示词工程 · 内容设计</p>
+<div class="tags">
+<span class="tag">Seedance</span><span class="tag">MiniMax H3</span><span class="tag">分镜与镜头设计</span><span class="tag">角色 IP 内容</span><span class="tag">TVC 创意</span><span class="tag">中文 / English / Bahasa Indonesia</span>
+</div>
+</header>
+
+<h2>视频作品</h2>
+<p class="lead">以下作品的创意、分镜、提示词和剪辑均由本人完成。</p>
+<div class="grid" id="works"></div>
+
+<h2>工作方法</h2>
+<div class="skill">
+<strong>AI Video Clip Director</strong>（原创 Skill）
+<p class="lead" style="margin:6px 0 0">把创意或剧本拆成可逐段生成的短镜头，再通过剪辑组合成片。总结了本人在 AI 视频制作中的镜头规划、提示词结构和返修经验。</p>
+<ul>
+<li>一个情绪段落拆成 3–4 条短镜头，每条只做一个主要动作</li>
+<li>动作镜头从中段切入，配合速度描述和冲击帧</li>
+<li>处理速度与画面稳定的取舍，以及否定描述、参考图标注泄漏等常见问题</li>
+<li>借鉴 IP 和改编真实事件时的原创与伦理边界</li>
+</ul>
+<p style="margin:14px 0 0"><a href="skill/ai-video-clip-director/SKILL.md">查看完整 Skill →</a></p>
+</div>
+
+<footer>© 2026 周凯琳 Kellyn. 作品仅用于作品集展示。</footer>
+</div>
+
+<script>
+const works = [
+  {file:"zero-lactose-tvc", title:"零乳糖牛奶 TVC", meta:"广告大赛参赛作品 · 横屏 · 96 秒", desc:"以犯罪片的叙事结构包装乳制品广告，完成从剧本、分镜到成片的全流程。", v:false},
+  {file:"pink-sitcom-cat", title:"粉色公寓猫咪情景剧", meta:"角色 IP 短剧 · 竖屏 · 32 秒", desc:"以宠物猫为主角的生活情景喜剧，人物与动物同框表演，保持角色造型前后一致。", v:true},
+  {file:"halloween-chick-kitten", title:"万圣节小鸡装小猫", meta:"节日热点 · 竖屏 · 18 秒", desc:"低机位跟拍穿小鸡装、提南瓜桶的小猫穿过夜晚街头人群。", v:true},
+  {file:"pumpkin-kittens", title:"南瓜小猫", meta:"节日热点 · 横屏 · 24 秒", desc:"两只装扮成南瓜和蝙蝠的小猫在落叶与南瓜灯前互动。", v:false},
+  {file:"kitten-parade", title:"小猫万圣节游行", meta:"节日热点 · 横屏 · 14 秒", desc:"一队变装小猫沿人行道列队前进，固定机位横移展开画面。", v:false},
+  {file:"hamster-standoff", title:"仓鼠对峙", meta:"表情包创意 · 横屏 · 12 秒", desc:"用电影对峙镜头的构图和表演表现一只举枪的仓鼠，制造反差喜剧效果。", v:false}
+];
+document.getElementById('works').innerHTML = works.map(w => `
+<article class="card">
+<div class="media${w.v ? ' v' : ''}"><video controls preload="none" playsinline poster="posters/${w.file}.jpg" src="videos/${w.file}.mp4"></video></div>
+<div class="body"><h3>${w.title}</h3><div class="meta">${w.meta}</div><p>${w.desc}</p></div>
+</article>`).join('');
+</script>
+</body>
+</html>
