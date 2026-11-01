@@ -47,6 +47,14 @@ footer{color:var(--muted);font-size:13px;padding:56px 0 40px;border-top:1px soli
 <p class="lead">以下作品的创意、分镜、提示词和剪辑均由本人完成。</p>
 <div class="grid" id="works"></div>
 
+<h2>PixVerse 工作作品</h2>
+<p class="lead">在 PixVerse 社区与内容运营岗位期间制作的模型 showcase 与活动作品。</p>
+<div class="grid" id="pixverse"></div>
+
+<h2>比赛主题创作</h2>
+<p class="lead">以下为按比赛主题进行的同人创作，相关角色、台词与音乐的版权归原权利方，仅作非商业展示。</p>
+<div class="grid" id="contest"></div>
+
 <h2>工作方法</h2>
 <div class="skill">
 <strong>AI Video Clip Director</strong>（原创 Skill）
@@ -72,11 +80,27 @@ const works = [
   {file:"kitten-parade", title:"小猫万圣节游行", meta:"节日热点 · 横屏 · 14 秒", desc:"一队变装小猫沿人行道列队前进，固定机位横移展开画面。", v:false},
   {file:"hamster-standoff", title:"仓鼠对峙", meta:"表情包创意 · 横屏 · 12 秒", desc:"用电影对峙镜头的构图和表演表现一只举枪的仓鼠，制造反差喜剧效果。", v:false}
 ];
-document.getElementById('works').innerHTML = works.map(w => `
+const pixverse = [
+  {file:"pixel-adventure-rpg", title:"像素冒险 RPG", meta:"PixVerse 像素冒险挑战赛 · 横屏 · 123 秒", desc:"像素风 RPG 实机演示风格短片，包含 3 个原创角色、2 场战斗和 1 次地图切换。", v:false},
+  {file:"street-hero", title:"Street Hero 街头英雄", meta:"原创动作短片 · MiniMax H3 · 横屏 · 100 秒", desc:"原创女性街头英雄追击单车窃贼的动作短片，用短镜头快切组织追逐与打斗节奏。", v:false},
+  {file:"greybox-to-final", title:"白模到成片", meta:"动作参考控制 · 方形 · 14 秒", desc:"上下对照展示 3D 白模动作预演与最终渲染成片，动作和机位由白模锁定。", v:false},
+  {file:"sitcom-black-cat", title:"黑猫情景剧", meta:"Seedance · 横屏 · 30 秒", desc:"客厅情景喜剧，穿牛仔外套的黑猫与室友争抢三明治。", v:false},
+  {file:"girl-group-mv", title:"女团 MV", meta:"音乐 MV · 横屏 · 16 秒", desc:"夜晚欧式街道上的四人女团 MV，人物特写与群像镜头交替推进。", v:false},
+  {file:"anime-portrait", title:"日系动漫角色 MV", meta:"MiniMax H3 · 横屏 · 15 秒", desc:"日系平涂画风的角色特写 MV，配合图形元素与快切转场。", v:false}
+];
+const contest = [
+  {file:"football-anime-mv", title:"足球动漫主题 MV", meta:"参赛作品 · 同人创作 · 横屏 · 60 秒", desc:"以经典足球动漫为主题的比赛 MV，从球场全景推进到射门与扑救的高潮段落。", v:false},
+  {file:"halloween-costume-turntable", title:"万圣节经典角色变装", meta:"参赛作品 · 同人创作 · 竖屏 · 15 秒", desc:"俯拍构图下人物依次变换成多位经典影视角色的万圣节造型。", v:true},
+  {file:"rush-hour-parody", title:"电影台词 AI MV", meta:"参赛作品 · 同人创作 · 横屏 · 16 秒", desc:"把经典电影台词改编成歌曲演唱的 AI MV，字幕与节拍同步。", v:false}
+];
+const card = w => `
 <article class="card">
 <div class="media${w.v ? ' v' : ''}"><video controls preload="none" playsinline poster="posters/${w.file}.jpg" src="videos/${w.file}.mp4"></video></div>
 <div class="body"><h3>${w.title}</h3><div class="meta">${w.meta}</div><p>${w.desc}</p></div>
-</article>`).join('');
+</article>`;
+document.getElementById('works').innerHTML = works.map(card).join('');
+document.getElementById('pixverse').innerHTML = pixverse.map(card).join('');
+document.getElementById('contest').innerHTML = contest.map(card).join('');
 </script>
 </body>
 </html>
